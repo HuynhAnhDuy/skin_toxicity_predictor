@@ -216,7 +216,7 @@ with col2:
 # Footer
 st.markdown("---")
 st.markdown(
-    "<div style='text-align:center; font-size:13px; color:gray; line-height:1.6;'>"
+    "<div style='text-align:center; font-size:14px; color:gray; line-height:1.6;'>"
     "⚠️ <b>Disclaimer:</b> This platform is intended for <i>research purposes only</i>. "
     "The information provided here does not substitute for professional medical advice, "
     "diagnosis, or treatment. <br><br>"
