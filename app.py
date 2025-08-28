@@ -151,7 +151,13 @@ with st.sidebar:
     3. Results for all 3 endpoints will be shown.
     """)
 
-    st.markdown("🔍 **Label meanings:**")
+    st.markdown("🔍 **Prediction rule:**")
+    st.markdown("""
+    - **Probability >= 0.5** → **Toxic** 
+    - **Probability < 0.5** → **Non-toxic**
+    """)
+
+    st.markdown("🧪 **Label meanings:**")
     st.markdown("""
     - ❌ Corrosive / Irritant / Sensitizer  
     - ✅ Non-corrosive / Non-irritant / Non-sensitizer  
