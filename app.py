@@ -122,6 +122,7 @@ A multi-endpoint model for skin toxicity prediction using BiLSM-based or LSTM-ba
 **Affiliations:** <sup>1</sup>Can Tho University, Vietnam; <sup>2</sup>Khon Kaen University, Thailand
             """, unsafe_allow_html=True)
 # Input mode sau Affiliations
+
 st.markdown("**Input mode**")
 mode = st.radio("", ["Single SMILES", "Batch CSV"], index=0, horizontal=True)
 
