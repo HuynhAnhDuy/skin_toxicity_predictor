@@ -9,7 +9,11 @@ from PIL import Image
 import json
 from functools import reduce
 
-st.set_page_config(page_title="Skin Toxicity Predictor", page_icon="🧪", layout="wide")
+st.set_page_config(
+    page_title="Skin Toxicity Prediction",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # ---------------------------
 # Cache heavy objects
@@ -117,13 +121,20 @@ st.title("☣️ DeepSkinTox: Skin Toxicity Predictor")
 st.markdown(
     """
     <div style='text-align:left; color:red; font-size:22px; font-weight:bold;'>
-        A multi-endpoint model for skin toxicity prediction using BiLSM-based or LSTM-based architectures.
+        Multi-endpoint skin-toxicity prediction with BiLSTM/LSTM and conjoint features.
     </div>
     """,
     unsafe_allow_html=True
 )
 st.markdown("""        
-**Model:** Skin Corrosion (BiLSTM, MACCS+PhyChem), Skin Irritation (LSTM, MACCS+PhyChem), Skin Sensitization (BiLSTM, Token+RDKit).  
+**Endpoints and Models:**
+
+● Skin Corrosion — predicted using a BiLSTM model trained on combined MACCS fingerprints and physicochemical descriptors.
+
+● Skin Irritation — modeled with an LSTM architecture incorporating MACCS fingerprints and physicochemical features.
+
+● Skin Sensitization — evaluated using a BiLSTM network with tokenized molecular representations and RDKit descriptors. 
+             
 **Developers:** Huynh Anh Duy<sup>1,2</sup>, Tarapong Srisongkram<sup>2</sup>  
 **Affiliations:** <sup>1</sup>Can Tho University, Vietnam; <sup>2</sup>Khon Kaen University, Thailand
             """, unsafe_allow_html=True)
@@ -145,6 +156,7 @@ with st.sidebar:
     - ❌ Corrosive / Irritant / Sensitizer  
     - ✅ Non-corrosive / Non-irritant / Non-sensitizer  
     """)
+
 if mode == "Single SMILES":
     smi = st.text_input("Enter a SMILES", value="CC(=O)Oc1ccccc1C(=O)O")
     if st.button("Predict", type="primary"):
