@@ -164,7 +164,10 @@ with st.sidebar:
     """)
 
 if mode == "Single SMILES":
-    smi = st.text_input("Enter a SMILES", value="CC(=O)Oc1ccccc1C(=O)O")
+    smi = st.text_input(
+    "Enter a SMILES",
+    placeholder="e.g., CC(=O)Oc1ccccc1C(=O)O"  # aspirin example
+)
     if st.button("Predict", type="primary"):
         if not smi.strip():
             st.warning("Please enter a SMILES string.")
