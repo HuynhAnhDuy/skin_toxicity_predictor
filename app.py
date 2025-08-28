@@ -113,7 +113,7 @@ def download_csv_button(df: pd.DataFrame, fname: str, label: str = "Download CSV
 # ---------------------------
 # UI
 # ---------------------------
-st.title("🧪 Skin Toxicity Predictor")
+st.title("☣️ Skin Toxicity Predictor")
 st.markdown("""
 A multi-endpoint model for skin toxicity prediction using BiLSM-based or LSTM-based architectures.
             
