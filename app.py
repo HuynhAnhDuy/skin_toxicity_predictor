@@ -121,6 +121,10 @@ A multi-endpoint model for skin toxicity prediction using BiLSM-based or LSTM-ba
 **Developers:** Huynh Anh Duy<sup>1,2</sup>, Tarapong Srisongkram<sup>2</sup>  
 **Affiliations:** <sup>1</sup>Can Tho University, Vietnam; <sup>2</sup>Khon Kaen University, Thailand
             """, unsafe_allow_html=True)
+# Input mode sau Affiliations
+st.markdown("**Input mode**")
+mode = st.radio("", ["Single SMILES", "Batch CSV"], index=0, horizontal=True)
+
 with st.sidebar:
     st.header("🧾 Instructions")
     st.markdown("""
@@ -134,11 +138,6 @@ with st.sidebar:
     - ❌ Corrosive / Irritant / Sensitizer  
     - ✅ Non-corrosive / Non-irritant / Non-sensitizer  
     """)
-
-    st.markdown("---")
-    st.markdown("**Input mode**")
-    mode = st.radio("", ["Single SMILES", "Batch CSV"], index=0)
-
 if mode == "Single SMILES":
     smi = st.text_input("Enter a SMILES", value="CC(=O)Oc1ccccc1C(=O)O")
     if st.button("Predict", type="primary"):
