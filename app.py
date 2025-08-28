@@ -215,3 +215,15 @@ with col2:
 
 # Footer
 st.markdown("---")
+st.markdown(
+    "<div style='text-align:center; font-size:13px; color:gray; line-height:1.6;'>"
+    "⚠️ <b>Disclaimer:</b> This platform is intended for <i>research purposes only</i>. "
+    "The information provided here does not substitute for professional medical advice, "
+    "diagnosis, or treatment. <br><br>"
+    "🧪 <b>Skin toxicity data and analyses</b> are experimental and should be interpreted "
+    "with caution. Use of this tool is restricted to qualified research personnel. <br><br>"
+    "📄 <b>Version:</b> 1.0.0 &nbsp; | &nbsp; <b>Last updated:</b> August 28, 2025 <br>"
+    "© 2025 QSAR Lab &nbsp; | &nbsp; "
+    "</div>",
+    unsafe_allow_html=True
+)
