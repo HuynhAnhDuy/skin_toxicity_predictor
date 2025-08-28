@@ -113,10 +113,16 @@ def download_csv_button(df: pd.DataFrame, fname: str, label: str = "Download CSV
 # ---------------------------
 # UI
 # ---------------------------
-st.title("☣️ Skin Toxicity Predictor")
-st.markdown("""
-A multi-endpoint model for skin toxicity prediction using BiLSM-based or LSTM-based architectures.
-            
+st.title("☣️ DeepSkinTox: Skin Toxicity Predictor")
+st.markdown(
+    """
+    <div style='text-align:left; color:red; font-size:22px; font-weight:bold;'>
+        A multi-endpoint model for skin toxicity prediction using BiLSM-based or LSTM-based architectures.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown("""        
 **Model:** Skin Corrosion (BiLSTM, MACCS+PhyChem), Skin Irritation (LSTM, MACCS+PhyChem), Skin Sensitization (BiLSTM, Token+RDKit).  
 **Developers:** Huynh Anh Duy<sup>1,2</sup>, Tarapong Srisongkram<sup>2</sup>  
 **Affiliations:** <sup>1</sup>Can Tho University, Vietnam; <sup>2</sup>Khon Kaen University, Thailand
@@ -161,7 +167,7 @@ if mode == "Single SMILES":
 
 else:
     up = st.file_uploader("Upload CSV with a 'SMILES' column", type=["csv"])
-    if st.button("Predict batch", type="primary"):
+    if st.button("Run batch prediction", type="primary"):
         if up is None:
             st.warning("Please upload a CSV file first.")
         else:
@@ -222,7 +228,7 @@ st.markdown(
     "diagnosis, or treatment. <br><br>"
     "🧪 <b>Skin toxicity data and analyses</b> are experimental and should be interpreted "
     "with caution. Use of this tool is restricted to qualified research personnel. <br><br>"
-    "📄 <b>Version:</b> 1.0.0 &nbsp; | &nbsp; <b>Last updated:</b> August 28, 2025 <br>"
+    "📄 <b>Version:</b> 1.0.0 &nbsp; | &nbsp; <b>Created on:</b> August 28, 2025 <br>"
     "© 2025 QSAR Lab &nbsp; | &nbsp; "
     "</div>",
     unsafe_allow_html=True
